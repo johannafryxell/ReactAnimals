@@ -43,7 +43,6 @@ export const AnimalPage = () => {
           <StyledImage src={animal.imageUrl} alt={animal.name} />
         </ImgWrapper>
         {animal.isFed ? <span>Mätt</span> : <FeedButton></FeedButton>}
-        <span>{animal.lastFed}</span>
       </StyledWrapper>
 
       <StyledWrapper width="60%">

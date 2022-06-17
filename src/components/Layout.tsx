@@ -1,14 +1,12 @@
-import { Link, Outlet } from "react-router-dom";
-import { StyledLogo } from "./StyledComponents/Images";
-import { LogoWrapper, StyledHeader } from "./StyledComponents/Wrappers";
+import { Outlet } from "react-router-dom";
+import { NavLink } from "./StyledComponents/Fonts";
+import { StyledHeader } from "./StyledComponents/Wrappers";
 
 export const Layout = () => {
   return (
     <div className="layout-container">
       <StyledHeader>
-        <nav>
-          <Link to={"/"}>Home</Link>
-        </nav>
+          <NavLink to={"/"}>Home</NavLink>
       </StyledHeader>
       <main>
         <Outlet></Outlet>

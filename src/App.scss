@@ -1,20 +1,23 @@
-html{
-    background-color: #FCF0DE;
-    margin-top: 0px;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600&display=swap");
+
+html {
+  background-color: #fcf0de;
+  margin-top: 0px;
 }
-body{
-margin-top: 0px;
+body {
+  font-family: "Raleway", sans-serif;
+  margin-top: 0px;
 }
-main{
-    min-width: 100vw;
+main {
+  min-width: 100vw;
 }
-.layout-container{
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.layout-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h1{
-    margin: 0;
+h1 {
+  margin: 0;
 }

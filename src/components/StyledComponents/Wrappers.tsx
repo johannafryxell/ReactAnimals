@@ -39,11 +39,11 @@ export const HeroWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh;
+  height: 70vh;
 `;
 
 export const ImgWrapper = styled.div`
-  width: 200px;
+  width: 240px;
   height: 200px;
   background-color: white;
 `;
