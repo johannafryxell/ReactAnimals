@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 interface IStyledWrapperProps {
@@ -27,11 +28,48 @@ export const StyledWrapper = styled.div`
   }
   @media (min-width: 1200px) {
     width: ${(props: IStyledWrapperProps) => props.desktopWidth || "100%"};
+    /* column-gap: 0px; */
   }
 `;
 
-export const AnimalWrapper = styled(StyledWrapper)`
+export const DisplayAnimals = styled(StyledWrapper)`
+  justify-content: space-around;
+`;
+
+export const AnimalWrapper = styled(Link)`
+  display: flex;
   background-color: white;
+  width: 90%;
+  text-decoration: none;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 4px 2px #d3c1a4;
+  }
+
+  @media (min-width: 980px) {
+    width: 30%;
+    flex-direction: column;
+  }
+
+  @media (min-width: 1200px) {
+    width: 22%;
+  }
+`;
+
+export const InfoWrapper = styled.div`
+  width: 50%;
+  height: 200px;
+  @media (min-width: 980px) {
+    width: 100%;
+  }
 `;
 
 export const HeroWrapper = styled.div`
@@ -41,11 +79,19 @@ export const HeroWrapper = styled.div`
   justify-content: flex-start;
   height: 70vh;
 `;
+interface IImgWrapperProps {
+  width?: string;
+  bigWidth?: string;
+}
 
 export const ImgWrapper = styled.div`
-  width: 240px;
+  width: ${(props: IImgWrapperProps) => props.width || "100%"};
   height: 200px;
   background-color: white;
+
+  @media (min-width: 980px) {
+    width: ${(props: IImgWrapperProps) => props.bigWidth || "100%"};
+  }
 `;
 
 export const LogoWrapper = styled.div`

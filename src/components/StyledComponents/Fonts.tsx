@@ -3,19 +3,19 @@ import styled from "styled-components";
 
 export const AnimalHeading = styled.h3`
   padding: 0px;
-  margin: 0px;
-  text-decoration: none;
+  margin-top: 10px;
+  text-align: center;
   color: black;
 `;
 
-export const ScrollableDescription = styled.p`
-  width: 180px;
-  overflow: auto;
-  height: 80px;
+export const Description = styled.p`
+  padding: 10px;
   color: black;
 `;
 
-export const StyledLink = styled(Link)`
+export const NavLink = styled(Link)`
+  margin-left: 40px;
+  color: #205c2e;
   text-decoration: none;
 
   &:focus,
@@ -25,9 +25,4 @@ export const StyledLink = styled(Link)`
   &:active {
     text-decoration: none;
   }
-`;
-
-export const NavLink = styled(StyledLink)`
-  margin-left: 40px;
-  color: #205C2E;
 `;
