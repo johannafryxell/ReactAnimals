@@ -12,6 +12,10 @@ export const StyledButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+
+  @media (min-width: 980px) {
+    width: 40%;
+  }
 `;
 
 export const DisabledButton = styled(StyledButton)`

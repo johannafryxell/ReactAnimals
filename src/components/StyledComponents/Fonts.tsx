@@ -15,6 +15,7 @@ export const Description = styled.p`
 
 export const NavLink = styled(Link)`
   margin-left: 40px;
+  margin-bottom: 20px;
   color: #205c2e;
   text-decoration: none;
 

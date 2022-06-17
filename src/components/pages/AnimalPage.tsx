@@ -43,7 +43,7 @@ export const AnimalPage = () => {
 
   return (
     <SingleAnimal tabletWidth="60%" desktopWidth="700px" width="90%">
-      <ImgWrapper>
+      <ImgWrapper height="300px" width="80%" bigWidth="400px">
         <StyledImage src={animal.imageUrl} alt={animal.name} />
       </ImgWrapper>
 
@@ -70,7 +70,11 @@ export const AnimalPage = () => {
             </div>
           </StyledWrapper>
           <StyledWrapper width="30%">
-            {animal.isFed ? <DisabledButton disabled>Matad</DisabledButton> : <FeedButton></FeedButton>}
+            {animal.isFed ? (
+              <DisabledButton disabled>Matad</DisabledButton>
+            ) : (
+              <FeedButton></FeedButton>
+            )}
           </StyledWrapper>
         </StyledWrapper>
 

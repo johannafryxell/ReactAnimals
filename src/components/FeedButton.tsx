@@ -9,7 +9,13 @@ export const FeedButton = () => {
 
   return (
     <>
-      <StyledButton onClick={()=> {animals.feedAnimal(parseInt(params.id || "0"))}}>Mata</StyledButton>
+      <StyledButton
+        onClick={() => {
+          animals.feedAnimal(parseInt(params.id || "0"));
+        }}
+      >
+        Mata
+      </StyledButton>
     </>
   );
 };

@@ -86,12 +86,13 @@ export const HeroWrapper = styled.div`
 `;
 interface IImgWrapperProps {
   width?: string;
+  height?: string;
   bigWidth?: string;
 }
 
 export const ImgWrapper = styled.div`
   width: ${(props: IImgWrapperProps) => props.width || "100%"};
-  height: 200px;
+  height: ${(props: IImgWrapperProps) => props.height || "200px"};
   background-color: white;
 
   @media (min-width: 980px) {
