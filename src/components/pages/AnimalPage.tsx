@@ -53,19 +53,19 @@ export const AnimalPage = () => {
         <StyledWrapper justify="space-between" columnGap="0px">
           <StyledWrapper width="70%" justify="flex-start">
             <div>
-              <span>Latin name: </span>
+              <span>Latinskt namn: </span>
               <span>{animal.latinName}</span>
             </div>
             <div>
-              <span>Born: </span>
+              <span>Född: </span>
               <span>{animal.yearOfBirth}</span>
             </div>
             <div>
-              <span>Medicine: </span>
+              <span>Medicin: </span>
               <span>{animal.medicine}</span>
             </div>
             <div>
-              <span>Description: </span>
+              <span>Beskrivning: </span>
               <span>{animal.shortDescription}</span>
             </div>
           </StyledWrapper>
