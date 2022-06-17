@@ -20,4 +20,7 @@ export const StyledButton = styled.button`
 
 export const DisabledButton = styled(StyledButton)`
   opacity: 0.6;
+  &:hover {
+    cursor: auto;
+  }
 `;
