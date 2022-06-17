@@ -8,13 +8,14 @@ interface IStyledWrapperProps {
   wrap?: string;
   width?: string;
   rowGap?: string;
+  columnGap?: string;
   desktopWidth?: string;
   tabletWidth?: string;
 }
 
 export const StyledWrapper = styled.div`
   display: flex;
-  column-gap: 20px;
+  column-gap: ${(props: IStyledWrapperProps) => props.columnGap || "20px"};
   row-gap: ${(props: IStyledWrapperProps) => props.rowGap || "0px"};
   flex-direction: ${(props: IStyledWrapperProps) => props.direction || "row"};
   justify-content: ${(props: IStyledWrapperProps) => props.justify || "center"};
@@ -34,6 +35,10 @@ export const StyledWrapper = styled.div`
 
 export const DisplayAnimals = styled(StyledWrapper)`
   justify-content: space-around;
+`;
+
+export const SingleAnimal = styled(StyledWrapper)`
+  flex-direction: column;
 `;
 
 export const AnimalWrapper = styled(Link)`

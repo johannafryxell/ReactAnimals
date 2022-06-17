@@ -2,9 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import IAnimal from "../../models/IAnimal";
 import { StyledImage } from "../StyledComponents/Images";
-import { ImgWrapper, StyledWrapper } from "../StyledComponents/Wrappers";
+import {
+  ImgWrapper,
+  SingleAnimal,
+  StyledWrapper,
+} from "../StyledComponents/Wrappers";
 import { FeedButton } from "../FeedButton";
 import { AnimalContext } from "../../contexts/AnimalContext";
+import { DisabledButton } from "../StyledComponents/Buttons";
 
 export const AnimalPage = () => {
   const animalObject = useContext(AnimalContext);
@@ -30,41 +35,43 @@ export const AnimalPage = () => {
     }
   }, [animalObject.animals]);
 
-  useEffect(() => {    
-    if(animal.id === 0) return;
-    
+  useEffect(() => {
+    if (animal.id === 0) return;
+
     animalObject.feedTimer(animal.id);
-  }, [animal])
+  }, [animal]);
 
   return (
-    <StyledWrapper>
-      <StyledWrapper direction="column" width="30%">
-        <ImgWrapper>
-          <StyledImage src={animal.imageUrl} alt={animal.name} />
-        </ImgWrapper>
-        {animal.isFed ? <span>Mätt</span> : <FeedButton></FeedButton>}
-      </StyledWrapper>
+    <SingleAnimal tabletWidth="60%" desktopWidth="700px" width="90%">
+      <ImgWrapper>
+        <StyledImage src={animal.imageUrl} alt={animal.name} />
+      </ImgWrapper>
 
-      <StyledWrapper width="60%">
+      <StyledWrapper>
         <h2>{animal.name}</h2>
 
-        <StyledWrapper justify="flex-start">
-          <div>
-            <span>Latin name: </span>
-            <span>{animal.latinName}</span>
-          </div>
-          <div>
-            <span>Born: </span>
-            <span>{animal.yearOfBirth}</span>
-          </div>
-          <div>
-            <span>Medicine: </span>
-            <span>{animal.medicine}</span>
-          </div>
-          <div>
-            <span>Description: </span>
-            <span>{animal.shortDescription}</span>
-          </div>
+        <StyledWrapper justify="space-between" columnGap="0px">
+          <StyledWrapper width="70%" justify="flex-start">
+            <div>
+              <span>Latin name: </span>
+              <span>{animal.latinName}</span>
+            </div>
+            <div>
+              <span>Born: </span>
+              <span>{animal.yearOfBirth}</span>
+            </div>
+            <div>
+              <span>Medicine: </span>
+              <span>{animal.medicine}</span>
+            </div>
+            <div>
+              <span>Description: </span>
+              <span>{animal.shortDescription}</span>
+            </div>
+          </StyledWrapper>
+          <StyledWrapper width="30%">
+            {animal.isFed ? <DisabledButton disabled>Matad</DisabledButton> : <FeedButton></FeedButton>}
+          </StyledWrapper>
         </StyledWrapper>
 
         <div>
@@ -72,6 +79,6 @@ export const AnimalPage = () => {
           <p>{animal.longDescription}</p>
         </div>
       </StyledWrapper>
-    </StyledWrapper>
+    </SingleAnimal>
   );
 };

@@ -9,6 +9,10 @@ body {
   margin-top: 0px;
 }
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-width: 100vw;
 }
 .layout-container {
